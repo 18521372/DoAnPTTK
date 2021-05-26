@@ -6,10 +6,12 @@
 package GUI;
 
 import BLL.BDangNhap;
-import java.awt.Graphics;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
 
 /**
  *
@@ -18,27 +20,16 @@ import javax.swing.JPanel;
 public class DangNhapGUI extends javax.swing.JFrame {
 
     /**
-     * Creates new form Login
+     * Creates new form NewJFrame
      */
-    public DangNhapGUI() {
-        initComponents();
-        BDangNhap ctrl = new BDangNhap(this,jbtnLogin,jtfUser,jtfPass);
-        ctrl.setView();
-        ImageIcon background=new ImageIcon("BackGround.png");
-//        JPanel jpanel;
-//        this.setSize(300,200);
-//        jpanel=new JPanel(){
-//        @Override
-//        protected  void paintComponent(Graphics g) {
-//        super.paintComponent(g);
-//        if(background!=null)
-//        {
-//        g.drawImage(background.getImage(),
-//        0,0,getWidth(),getHeight(),null);
-//        }
-//        }
-//        };
-//        setContentPane(jpanel);
+    public DangNhapGUI()  {
+        initComponents();  
+        jPanel1.setBackground(new Color(96, 100, 191));
+        jPanel1.removeAll();
+        jPanel1.setLayout(new BorderLayout());
+        jPanel1.add(new DangNhapPanel(this));
+        jPanel1.validate();
+        jPanel1.repaint();
     }
 
     /**
@@ -49,108 +40,35 @@ public class DangNhapGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
-        jbtnLogin = new javax.swing.JButton();
-        jtfPass = new javax.swing.JPasswordField();
-        jtfUser = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Đăng Nhập");
-        getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jbtnLogin.setText("Đăng nhập");
-        jbtnLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnLoginActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(29, 18, 53, 0);
-        getContentPane().add(jbtnLogin, gridBagConstraints);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
-        jtfPass.setName("jtfPass"); // NOI18N
-        jtfPass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfPassActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 150;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 53, 0, 61);
-        getContentPane().add(jtfPass, gridBagConstraints);
-
-        jtfUser.setName(""); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 150;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(28, 53, 0, 61);
-        getContentPane().add(jtfUser, gridBagConstraints);
-        jtfUser.getAccessibleContext().setAccessibleName("");
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("Đăng nhập");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(56, 115, 0, 0);
-        getContentPane().add(jLabel1, gridBagConstraints);
-
-        jLabel2.setText("Tài khoản");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(31, 60, 0, 0);
-        getContentPane().add(jLabel2, gridBagConstraints);
-
-        jLabel3.setText("Mật khẩu");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 60, 0, 0);
-        getContentPane().add(jLabel3, gridBagConstraints);
-        jLabel3.getAccessibleContext().setAccessibleName("mật khẩu");
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jtfPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfPassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtfPassActionPerformed
-
-    private void jbtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnLoginActionPerformed
-        BDangNhap ctrl = new BDangNhap(this,jbtnLogin,jtfUser,jtfPass);
-        String str = "";
-        String user = jtfUser.getText();
-        String pass = jtfPass.getText();
-        if (user.equals(str) || pass.equals(str)) {
-            JOptionPane.showMessageDialog(null, "Tên đăng nhập hay mật khẩu không được bỏ trúng", "Thông báo ", JOptionPane.ERROR_MESSAGE);
-            ctrl.reset();
-        } 
-        else {
-            ctrl.DangNhap();
-        }
-    }//GEN-LAST:event_jbtnLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,23 +97,16 @@ public class DangNhapGUI extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new DangNhapGUI().setVisible(true);
-            }
+}
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JButton jbtnLogin;
-    private javax.swing.JPasswordField jtfPass;
-    private javax.swing.JTextField jtfUser;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
