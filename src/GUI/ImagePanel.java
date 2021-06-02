@@ -6,11 +6,13 @@
 package GUI;
 
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -24,19 +26,33 @@ public class ImagePanel extends javax.swing.JPanel {
     private BufferedImage image;
  
     public ImagePanel(String link) {
-       try {                
+//       JOptionPane.showMessageDialog(this, "Tên người dùng hoặc mật khẩu không hợp lệ\nXin vui lòng thử lại!", "Đăng nhập thất bại", JOptionPane.ERROR_MESSAGE);
+       link="F:\\DoAnPTTK\\src\\image\\"+link;
+        try {                
           image = ImageIO.read(new File(link));
        } catch (IOException ex) {
             // handle exception...
        }
     }
     public ImagePanel()  {
-        this("F:\\DoAnPTTK\\src\\image\\BackGround.png");
+        this("BackGround.png");
+    }
+    public void setImage(String link) {
+//       JOptionPane.showMessageDialog(this, "Tên người dùng hoặc mật khẩu không hợp lệ\nXin vui lòng thử lại!", "Đăng nhập thất bại", JOptionPane.ERROR_MESSAGE);
+       link="F:\\DoAnPTTK\\src\\image\\"+link;
+        try {                
+          image = ImageIO.read(new File(link));
+       } catch (IOException ex) {
+            // handle exception...
+       }
+       this.validate();
+       this.repaint();
     }
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters            
+        g.drawImage(image.getScaledInstance(this.getWidth(), this.getHeight(),
+          Image.SCALE_SMOOTH), 0, 0, this); 
     }
  
 
@@ -49,19 +65,33 @@ public class ImagePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

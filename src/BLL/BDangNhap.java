@@ -6,7 +6,7 @@
 package BLL;
 
 import DAL.DBConnect;
-import GUI.sidebarGUI;
+import GUI.MenuGUI;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.Connection;
@@ -33,7 +33,7 @@ public class BDangNhap {
     public JFrame jfr;
     public static String nameLogin = "";
 
-    public BDangNhap(JFrame jfr, JButton jbtnLogin, JTextField jtfUser, JTextField jtfPass,JPanel jpanel1) {
+    public BDangNhap(JFrame jfr, JTextField jtfUser, JTextField jtfPass,JPanel jpanel1) {
         this.jfr = jfr;
         this.jbtnLogin = jbtnLogin;
         this.jtfUser = jtfUser;
@@ -57,7 +57,7 @@ public class BDangNhap {
             while (rs.next()) {
                 if (user.equals(rs.getString(1)) && pass.equals(rs.getString(2))) {
                         nameLogin = user;
-                        new sidebarGUI().setVisible(true); 
+                        new MenuGUI().setVisible(true); 
                         jfr.setVisible(false);
                 }
             }
