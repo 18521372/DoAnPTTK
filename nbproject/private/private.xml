@@ -5,15 +5,9 @@
         <group>
             <file>file:/F:/DoAnPTTK/src/GUI/ImagePanel.java</file>
             <file>file:/F:/DoAnPTTK/src/BLL/BDangNhap.java</file>
-            <file>file:/F:/DoAnPTTK/src/GUI/QuanLyNhanVienGUI.java</file>
             <file>file:/F:/DoAnPTTK/src/GUI/QuanLyHoaDonGUI.java</file>
             <file>file:/F:/DoAnPTTK/src/GUI/MenuGUI.java</file>
-            <file>file:/F:/DoAnPTTK/src/GUI/QuanLyKhachHangGUI.java</file>
-            <file>file:/F:/DoAnPTTK/src/image/BackGround.png</file>
-            <file>file:/F:/DoAnPTTK/src/DAL/DBConnect.java</file>
-            <file>file:/F:/DoAnPTTK/src/BLL/BChuyenMangHinh.java</file>
             <file>file:/F:/DoAnPTTK/src/GUI/DangNhapGUI.java</file>
-            <file>file:/F:/DoAnPTTK/src/GUI/QuanLyKhoGUI.java</file>
         </group>
     </open-files>
 </project-private>

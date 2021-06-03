@@ -51,14 +51,17 @@ public class BDangNhap {
         String pass = jtfPass.getText();
         try {
             Connection con = DBConnect.getConnection();
-            String sql = "SELECT * FROM taikhoan";
-            PreparedStatement ps = con.prepareCall(sql);
+            String sql = "SELECT `username`, `password`, `chucvu`,`statusflag` FROM nhanvien WHERE username=? AND password=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,user);
+            ps.setString(2,pass);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                if (user.equals(rs.getString(1)) && pass.equals(rs.getString(2))) {
+            if(rs.next()){
+                if (rs.getByte(4)==0) {
                         nameLogin = user;
-                        new MenuGUI().setVisible(true); 
+                        new MenuGUI(rs.getString(3)).setVisible(true); 
                         jfr.setVisible(false);
+
                 }
             }
             con.close();

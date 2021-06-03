@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 public class DBConnect {
 
     public static String driver = "com.mysql.jdbc.Driver";
-    public static String url = "jdbc:mysql://127.0.0.1:802/quanlykaraoke";
+    public static String url = "jdbc:mysql://127.0.0.1:802/quanlychtl";
     public static String user = "root";
     public static String password = "";
 
@@ -21,7 +21,7 @@ public class DBConnect {
         try {
             Connection cons = null;
             Class.forName("com.mysql.jdbc.Driver");
-            cons = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/quanlykaraoke?useUnicode=true&characterEncoding=UTF-8","root", "");
+            cons = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/quanlychtl?useUnicode=true&characterEncoding=UTF-8","root", "");
             return cons;
         } catch (Exception ex) {
             ex.printStackTrace();

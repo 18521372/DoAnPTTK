@@ -15,11 +15,27 @@ public class MenuGUI extends javax.swing.JFrame {
      * Creates new form MenuGUI
      */
     public ImagePanel a,b,c,d;
+    public static String ChucVu;
+    public MenuGUI(String ChucVu) {
+        initComponents();
+        switch(ChucVu){
+            case "ThuNgan":
+                a.disable("QuanLyNhanVien_Disable_button.png");
+                b.disable("QuanLyHangKho_Disable_Button.png");
+                break;
+            case "ThuKho":
+                a.disable("QuanLyNhanVien_Disable_button.png");
+                c.disable("QuanLyHoaDon_Disable_Button.png");
+                d.disable("QuanLyKhachHang_Disable_Button.png");
+        }
+        this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
+        this.ChucVu=ChucVu;
+        
+    }
     public MenuGUI() {
         initComponents();
         this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,10 +46,10 @@ public class MenuGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new ImagePanel("HomePage_Background.png");
-        jPanel2 = new ImagePanel("QuanLyKhachHang_Button.png");
+        jPanel2 = (d=new ImagePanel("QuanLyKhachHang_Button.png"));
         jPanel3 = (a=new ImagePanel("QuanLyNhanVien_button.png"));
         jPanel4 = (b=new ImagePanel("QuanLyHangKho_Button.png"));
-        jPanel5 = new ImagePanel("QuanLyHoaDon_button.png");
+        jPanel5 = (c=new ImagePanel("QuanLyHoaDon_button.png"));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,6 +58,12 @@ public class MenuGUI extends javax.swing.JFrame {
         jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel2MouseExited(evt);
             }
         });
 
@@ -87,6 +109,12 @@ public class MenuGUI extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel4MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel4MouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jPanel4MousePressed(evt);
             }
@@ -111,6 +139,12 @@ public class MenuGUI extends javax.swing.JFrame {
         jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel5MouseExited(evt);
             }
         });
 
@@ -191,7 +225,7 @@ public class MenuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel2MouseClicked
 
     private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
-        b.setImage("QuanLyHangHoa_Pressed_Button.png");
+
     }//GEN-LAST:event_jPanel4MousePressed
 
     private void jPanel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseEntered
@@ -203,8 +237,32 @@ public class MenuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel3MouseExited
 
     private void jPanel4MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseReleased
-        b.setImage("QuanLyHangKho_Button.png");
+
     }//GEN-LAST:event_jPanel4MouseReleased
+
+    private void jPanel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseEntered
+        c.setImage("QuanLyHoaDon_Pressed_Button.png");
+    }//GEN-LAST:event_jPanel5MouseEntered
+
+    private void jPanel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseExited
+        c.setImage("QuanLyHoaDon_button.png");
+    }//GEN-LAST:event_jPanel5MouseExited
+
+    private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
+        d.setImage("QuanLyKhachHang_Pressed_Button.png");
+    }//GEN-LAST:event_jPanel2MouseEntered
+
+    private void jPanel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseExited
+        d.setImage("QuanLyKhachHang_Button.png");
+    }//GEN-LAST:event_jPanel2MouseExited
+
+    private void jPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseEntered
+        b.setImage("QuanLyHangHoa_Pressed_Button.png");
+    }//GEN-LAST:event_jPanel4MouseEntered
+
+    private void jPanel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseExited
+        b.setImage("QuanLyHangKho_Button.png");
+    }//GEN-LAST:event_jPanel4MouseExited
 
     /**
      * @param args the command line arguments
