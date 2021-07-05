@@ -857,7 +857,7 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
     }//GEN-LAST:event_deleteButtonMouseClicked
 
     private void buttonSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSearchMouseClicked
-        String searchString = textSearch.getText().toLowerCase();
+        String searchString = textSearch.getText().toLowerCase().trim();
         ArrayList<NhanVien> list = nhanVienController.getAllNhanVien();
         this.removeAllElementInTable();
 
