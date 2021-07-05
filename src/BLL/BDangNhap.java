@@ -51,7 +51,7 @@ public class BDangNhap {
         String pass = jtfPass.getText();
         try {
             Connection con = DBConnect.getConnection();
-            String sql = "SELECT `username`, `password`, `chucvu`,`statusflag` FROM nhanvien WHERE username=? AND password=?";
+            String sql = "SELECT `username`, `password`, `chucvu`,`statusflag`,`manhanvien` FROM nhanvien WHERE username=? AND password=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,user);
             ps.setString(2,pass);
@@ -59,7 +59,7 @@ public class BDangNhap {
             if(rs.next()){
                 if (rs.getByte(4)==0) {
                         nameLogin = user;
-                        new MenuGUI(rs.getString(3)).setVisible(true); 
+                        new MenuGUI(rs.getString(3),rs.getInt(5)).setVisible(true); 
                         jfr.setVisible(false);
 
                 }

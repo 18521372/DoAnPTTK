@@ -34,22 +34,22 @@ public class NhanVienController extends DBConnect {
             while (resultSet.next()){
                 //retrieve data from result set
                 int maNhanVien = resultSet.getInt(1);
-                String tenNhanVien = resultSet.getString(2);
-                String ngaySinh = resultSet.getString(3);
-                String diaChi = resultSet.getString(4);
-                int soDienThoai = resultSet.getInt(5);
-                String email = resultSet.getString(6);
-                int gioiTinh = resultSet.getInt(7);
-                String chucVu = resultSet.getString(8);
-                String queQuan = resultSet.getString(9);
-                String ngayVaoLam = resultSet.getString(10);
-                String hinhAnh = resultSet.getString(11);
-                String username = resultSet.getString(12);
-                String password = resultSet.getString(13);
-                int luongCoBan = resultSet.getInt(14);
-                int luongThuong = resultSet.getInt(15);
-                float heSoLuong = resultSet.getFloat(16);
-                int status = resultSet.getInt(17);
+                String tenNhanVien = resultSet.getString(4);
+                String ngaySinh = resultSet.getString(5);
+                String diaChi = resultSet.getString(6);
+                int soDienThoai = resultSet.getInt(7);
+                String email = resultSet.getString(8);
+                int gioiTinh = resultSet.getInt(9);
+                String chucVu = resultSet.getString(10);
+                String queQuan = resultSet.getString(11);
+                String ngayVaoLam = resultSet.getString(12);
+                String hinhAnh = resultSet.getString(17);
+                String username = resultSet.getString(2);
+                String password = resultSet.getString(3);
+                int luongCoBan = resultSet.getInt(13);
+                int luongThuong = resultSet.getInt(14);
+                float heSoLuong = resultSet.getFloat(15);
+                int status = resultSet.getInt(18);
                 
                 //init new model
                 NhanVien nhanVien = new NhanVien();
@@ -83,7 +83,7 @@ public class NhanVienController extends DBConnect {
     public boolean insert(NhanVien nhanVien){
         boolean result = false;
         try {
-            String insert = "insert into NhanVien(tennhanvien, ngaysinh,diachi,sodienthoai,email,gioitinh,chucvu,quequan,ngayvl,hinhanh,luong_co_ban,luong_thuong,he_so_luong) "
+            String insert = "insert into NhanVien(tennhanvien, ngaysinh,diachi,sodienthoai,email,gioitinh,chucvu,quequan,ngayvl,hinhanh,luongcb,luongthuong,hesoluong) "
                     +"values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(insert);
             preparedStatement.setString(1,nhanVien.getTenNhanVien());
@@ -114,7 +114,7 @@ public class NhanVienController extends DBConnect {
     public boolean update(NhanVien nhanVien) {
         boolean result = false;
         try {
-            String insert = "update NhanVien set tennhanvien = ?, ngaysinh = ?,diachi = ?, sodienthoai = ?,email = ? ,gioitinh = ? ,chucvu = ?, quequan = ?, ngayvl = ?, hinhanh = ?, luong_co_ban = ?,luong_thuong = ?, he_so_luong = ?, statusflag = ? "
+            String insert = "update NhanVien set tennhanvien = ?, ngaysinh = ?,diachi = ?, sodienthoai = ?,email = ? ,gioitinh = ? ,chucvu = ?, quequan = ?, ngayvl = ?, hinhanh = ?, luongcb = ?,luongthuong = ?, hesoluong = ?, statusflag = ? "
                     +"where manhanvien = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(insert);
             preparedStatement.setString(1,nhanVien.getTenNhanVien());
