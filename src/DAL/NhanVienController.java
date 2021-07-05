@@ -83,8 +83,8 @@ public class NhanVienController extends DBConnect {
     public boolean insert(NhanVien nhanVien){
         boolean result = false;
         try {
-            String insert = "insert into NhanVien(tennhanvien, ngaysinh,diachi,sodienthoai,email,gioitinh,chucvu,quequan,ngayvl,hinhanh,luong_co_ban,luong_thuong,he_so_luong,username,password) "
-                    +"values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String insert = "insert into NhanVien(tennhanvien, ngaysinh,diachi,sodienthoai,email,gioitinh,chucvu,quequan,ngayvl,hinhanh,luongcb,luongthuong,hesoluong) "
+                    +"values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(insert);
             preparedStatement.setString(1,nhanVien.getTenNhanVien());
             preparedStatement.setString(2,nhanVien.getNgaySinh().toString());
@@ -99,8 +99,6 @@ public class NhanVienController extends DBConnect {
             preparedStatement.setInt(11,nhanVien.getLuongCoBan());
             preparedStatement.setInt(12,nhanVien.getLuongThuong());
             preparedStatement.setFloat(13,nhanVien.getHeSoLuong());
-            preparedStatement.setString(14,nhanVien.getUsername());
-            preparedStatement.setString(15,nhanVien.getPassword());
             
             if (preparedStatement.executeUpdate()>0) {
                 result = true;
@@ -116,7 +114,7 @@ public class NhanVienController extends DBConnect {
     public boolean update(NhanVien nhanVien) {
         boolean result = false;
         try {
-            String insert = "update NhanVien set tennhanvien = ?, ngaysinh = ?,diachi = ?, sodienthoai = ?,email = ? ,gioitinh = ? ,chucvu = ?, quequan = ?, ngayvl = ?, hinhanh = ?, luong_co_ban = ?,luong_thuong = ?, he_so_luong = ?, statusflag = ?, username = ?, password = ? "
+            String insert = "update NhanVien set tennhanvien = ?, ngaysinh = ?,diachi = ?, sodienthoai = ?,email = ? ,gioitinh = ? ,chucvu = ?, quequan = ?, ngayvl = ?, hinhanh = ?, luongcb = ?,luongthuong = ?, hesoluong = ?, statusflag = ? "
                     +"where manhanvien = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(insert);
             preparedStatement.setString(1,nhanVien.getTenNhanVien());
@@ -133,9 +131,7 @@ public class NhanVienController extends DBConnect {
             preparedStatement.setInt(12,nhanVien.getLuongThuong());
             preparedStatement.setFloat(13,nhanVien.getHeSoLuong());
             preparedStatement.setInt(14, nhanVien.getStatusFlag());
-            preparedStatement.setString(15, nhanVien.getUsername());
-            preparedStatement.setString(16, nhanVien.getPassword());
-            preparedStatement.setInt(17, nhanVien.getMaNhanVien());
+            preparedStatement.setInt(15, nhanVien.getMaNhanVien());
 
             
             if (preparedStatement.executeUpdate()>0) {

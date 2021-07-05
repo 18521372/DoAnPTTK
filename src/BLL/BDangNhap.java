@@ -57,7 +57,7 @@ public class BDangNhap {
             ps.setString(2,pass);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
-                if (rs.getByte(4)==0) {
+                if (rs.getByte(4)==1) {
                         nameLogin = user;
                         new MenuGUI(rs.getString(3),rs.getInt(5)).setVisible(true); 
                         jfr.setVisible(false);

@@ -3,7 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/F:/DoAnPTTK/src/GUI/ImagePanel.java</file>
             <file>file:/F:/DoAnPTTK/src/BLL/BDangNhap.java</file>
             <file>file:/F:/DoAnPTTK/src/GUI/ManagementCustomer.java</file>
@@ -43,12 +42,6 @@
             <file>file:/F:/DoAnPTTK/src/GUI/QuanLyKhachHangGUI.java</file>
             <file>file:/F:/DoAnPTTK/src/GUI/QuanLyPhieuNhapPanel.java</file>
             <file>file:/F:/DoAnPTTK/src/BLL/DialogNotificationSuccessController.java</file>
-=======
-            <file>file:/E:/HK6/PTTK/Project/Source%20Code/DoAnPTTK/src/DAL/DBConnect.java</file>
-            <file>file:/E:/HK6/PTTK/Project/Source%20Code/DoAnPTTK/src/Models/NhanVien.java</file>
-            <file>file:/E:/HK6/PTTK/Project/Source%20Code/DoAnPTTK/src/GUI/QuanLyNhanVien/QuanLyNhanVien.java</file>
-            <file>file:/E:/HK6/PTTK/Project/Source%20Code/DoAnPTTK/src/DAL/NhanVienController.java</file>
->>>>>>> 6b7b128daebf190857b893b1a1455f27360f306f
         </group>
     </open-files>
 </project-private>

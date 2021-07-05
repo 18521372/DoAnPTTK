@@ -20,10 +20,10 @@ public class DBConnect {
     
     public static Connection getConnection() {
         try {
-            Connection connection = null;
-            Class.forName(driver);
-            connection = DriverManager.getConnection(url,user, password);
-            return connection;
+            Connection cons = null;
+            Class.forName("com.mysql.jdbc.Driver");
+            cons = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/quanlychtl?useUnicode=true&characterEncoding=UTF-8","root", "");
+            return cons;
         } catch (Exception ex) {
             ex.printStackTrace();
         }
