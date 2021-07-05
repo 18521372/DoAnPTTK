@@ -86,6 +86,10 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
         textMonth = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         textYear = new javax.swing.JTextField();
+        labelAddress1 = new javax.swing.JLabel();
+        textUsername = new javax.swing.JTextField();
+        labelAddress2 = new javax.swing.JLabel();
+        textPassword = new javax.swing.JTextField();
         SalaryInformationPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         labelName1 = new javax.swing.JLabel();
@@ -275,6 +279,14 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
 
         jLabel6.setText("/");
 
+        labelAddress1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        labelAddress1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        labelAddress1.setText("Tài khoản:");
+
+        labelAddress2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        labelAddress2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        labelAddress2.setText("Mật khẩu:");
+
         javax.swing.GroupLayout EmployeeInformationTablePanelLayout = new javax.swing.GroupLayout(EmployeeInformationTablePanel);
         EmployeeInformationTablePanel.setLayout(EmployeeInformationTablePanelLayout);
         EmployeeInformationTablePanelLayout.setHorizontalGroup(
@@ -337,7 +349,17 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(textName, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(67, 67, 67))))
+                        .addGap(67, 67, 67))
+                    .addGroup(EmployeeInformationTablePanelLayout.createSequentialGroup()
+                        .addComponent(labelAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textUsername)
+                        .addGap(430, 430, 430))
+                    .addGroup(EmployeeInformationTablePanelLayout.createSequentialGroup()
+                        .addComponent(labelAddress2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textPassword)
+                        .addGap(430, 430, 430))))
         );
         EmployeeInformationTablePanelLayout.setVerticalGroup(
             EmployeeInformationTablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -381,7 +403,15 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
                 .addGroup(EmployeeInformationTablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboBoxPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(EmployeeInformationTablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textUsername))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(EmployeeInformationTablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelAddress2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textPassword))
+                .addContainerGap())
         );
 
         comboBoxPosition.addItem("Thủ kho");
@@ -600,11 +630,11 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SalaryInformationPanelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(SalaryInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(panelCancel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(panelSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addContainerGap(70, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(SalaryInformationPanelLayout.createSequentialGroup()
                         .addGroup(SalaryInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelName2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -947,6 +977,8 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelAdd;
     private javax.swing.JLabel labelAddress;
+    private javax.swing.JLabel labelAddress1;
+    private javax.swing.JLabel labelAddress2;
     private javax.swing.JLabel labelBack;
     private javax.swing.JLabel labelBirth;
     private javax.swing.JLabel labelCancel;
@@ -989,10 +1021,12 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
     private javax.swing.JTextField textMonthSalary;
     private javax.swing.JTextField textName;
     private javax.swing.JTextField textNote;
+    private javax.swing.JTextField textPassword;
     private javax.swing.JTextField textPhone;
     private javax.swing.JTextField textPlace;
     private javax.swing.JTextField textSearch;
     private javax.swing.JTextField textSum;
+    private javax.swing.JTextField textUsername;
     private javax.swing.JTextField textYear;
     private javax.swing.JTextField textYearSalary;
     // End of variables declaration//GEN-END:variables
@@ -1075,6 +1109,12 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
 
         //retrieve position
         comboBoxPosition.setSelectedItem(nhanVien.getChucVu());
+        
+        //retrieve username
+        textUsername.setText(nhanVien.getUsername());
+        
+        //retrieve password
+        textPassword.setText(nhanVien.getPassword());
 
         //retrieve starting day
         String ngayVaoLam = nhanVien.getNgayVaoLam();
@@ -1136,6 +1176,8 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
         textAddress.setEditable(false);
         textPlace.setEditable(false);
         comboBoxPosition.setEnabled(false);
+        textUsername.setEditable(false);
+        textPassword.setEditable(false);
 
         //Salary Info
 //        textEmployeeId.setEditable(false);
@@ -1162,7 +1204,9 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
         textAddress.setEditable(true);
         textPlace.setEditable(true);
         comboBoxPosition.setEnabled(true);
-
+        textUsername.setEditable(true);
+        textPassword.setEditable(true);
+        
         //Salary Info
 //        textEmployeeId.setEditable(true);
         textDaySalary.setEditable(true);
@@ -1187,6 +1231,8 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
         textAddress.setText("");
         textPlace.setText("");
         comboBoxPosition.setSelectedItem("Quản lý");
+        textUsername.setText("");
+        textPassword.setText("");
 
         //Salary Info
         textEmployeeId.setText("");
@@ -1212,10 +1258,7 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
         String tenNhanVien = textName.getText();
         String ngaySinhString = textYear.getText() + "-" + textMonth.getText()
                 + "-" + textDay.getText();
-        /**
-         * TODO: Fix this
-         */
-//        int gioiTinh = buttonGroupGender.getSelection().toString() == "Nam" ? 1 : 0;
+
         int gioiTinh = radioMale.isSelected() ? 1 : 0;
 
         int soDienThoai = Integer.parseInt(textPhone.getText());
@@ -1223,6 +1266,9 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
         String queQuan = textPlace.getText();
         String diaChi = textAddress.getText();
         String chucVu = comboBoxPosition.getSelectedItem().toString();
+        String username = textUsername.getText();
+        String password = textPassword.getText();
+        
         String ngayVaoLamString = textYearSalary.getText() + "-" + textMonthSalary.getText() + "-"
                 + textDaySalary.getText();
         float HeSoLuong = Float.parseFloat(textCoeff.getText());
@@ -1239,7 +1285,7 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
 //                break;
 //        }
         //
-        NhanVien nhanVien = new NhanVien(maNhanVien, tenNhanVien, ngaySinhString, diaChi, soDienThoai, email, gioiTinh, chucVu, queQuan, ngayVaoLamString, "", "", "", luongCoBan, LuongThuong, HeSoLuong, status, ghiChu);
+        NhanVien nhanVien = new NhanVien(maNhanVien, tenNhanVien, ngaySinhString, diaChi, soDienThoai, email, gioiTinh, chucVu, queQuan, ngayVaoLamString, "", username, password, luongCoBan, LuongThuong, HeSoLuong, status, ghiChu);
         return nhanVien;
     }
 
