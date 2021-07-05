@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import BLL.ManagementCustomerController;
+
 /**
  *
  * @author ACER
@@ -16,8 +18,11 @@ public class MenuGUI extends javax.swing.JFrame {
      */
     public ImagePanel a,b,c,d;
     public static String ChucVu;
-    public MenuGUI(String ChucVu) {
+    public static int manv;
+    public MenuGUI(String ChucVu, int manv) {
         initComponents();
+        this.ChucVu=ChucVu;
+        this.manv=manv;
         switch(ChucVu){
             case "ThuNgan":
                 a.disable("QuanLyNhanVien_Disable_button.png");
@@ -29,7 +34,7 @@ public class MenuGUI extends javax.swing.JFrame {
                 d.disable("QuanLyKhachHang_Disable_Button.png");
         }
         this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
-        this.ChucVu=ChucVu;
+        
         
     }
     public MenuGUI() {
@@ -210,7 +215,7 @@ public class MenuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel4MouseClicked
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
-        new QuanLyNhanVienGUI().setVisible(true); 
+        new GUI.QuanLyNhanVien.QuanLyNhanVien().setVisible(true); 
         this.setVisible(false);
     }//GEN-LAST:event_jPanel3MouseClicked
 
@@ -220,7 +225,9 @@ public class MenuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel5MouseClicked
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
-        new QuanLyKhachHangGUI().setVisible(true); 
+//        new QuanLyKhachHangGUI().setVisible(true); 
+        ManagementCustomerController managementCustomerController = new ManagementCustomerController(new ManagementCustomer());
+        managementCustomerController.setHomeView(this);
         this.setVisible(false);
     }//GEN-LAST:event_jPanel2MouseClicked
 
